@@ -829,7 +829,7 @@
         lib$es6$promise$$internal$$makePromise(this.promise);
       }
 
-      if (Array.isArray(input)) {
+      if (lib$es6$promise$utils$$isArray(input)) {
         this._input     = input;
         this.length     = input.length;
         this._remaining = input.length;
@@ -932,7 +932,7 @@
 
       var P = local.Promise;
 
-      if (P && Object.prototype.toString.call(P.resolve()) === '[object Promise]' && !P.cast) {
+      if (P && (Object.prototype.toString.call(P.resolve()) === '[object Promise]' || Object.prototype.toString.call(P.resolve()) === '[object Object]') && !P.cast) {
         return;
       }
 
